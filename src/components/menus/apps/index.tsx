@@ -26,7 +26,7 @@ interface ApplicationItemProps {
 
 const ApplicationItem = ({ app, onLaunched }: ApplicationItemProps): JSX.Element => {
     return (
-        <button className="notification-card" halign={Gtk.Align.FILL} valign={Gtk.Align.START} onClick={() => { launchApp(app); onLaunched?.() }}>
+        <button className="notification-card" halign={Gtk.Align.FILL} valign={Gtk.Align.START} onClick={() => { app.launch(); onLaunched?.() }}>
             <box spacing={5}>
                 <icon className="notification-card-image icon" margin={5} halign={Gtk.Align.CENTER} valign={Gtk.Align.CENTER} vexpand={false} icon={icon(app.iconName)} />
                 <label halign={Gtk.Align.START} valign={Gtk.Align.CENTER} label={app.name} hexpand vexpand truncate wrap />
@@ -93,7 +93,7 @@ const ApplicationLauncher = ({ visible, onLaunched }: ApplicationLauncherProps):
     const onFilterReturn = () => {
         const first = list.get()[0]
         if (!first) return;
-        launchApp(first)
+        first.launch()
         onLaunched?.()
     }
 
