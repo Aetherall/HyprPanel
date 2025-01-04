@@ -24,6 +24,7 @@ import {
     Power,
     Hyprsunset,
     Hypridle,
+    Custom,
 } from './exports';
 
 import { WidgetContainer } from './shared/WidgetContainer';
@@ -62,6 +63,10 @@ const widget = {
     power: (): JSX.Element => WidgetContainer(Power()),
     hyprsunset: (): JSX.Element => WidgetContainer(Hyprsunset()),
     hypridle: (): JSX.Element => WidgetContainer(Hypridle()),
+    custom1: (): JSX.Element => WidgetContainer(Custom(options.bar.customModules.custom1)),
+    custom2: (): JSX.Element => WidgetContainer(Custom(options.bar.customModules.custom2)),
+    custom3: (): JSX.Element => WidgetContainer(Custom(options.bar.customModules.custom3)),
+    custom4: (): JSX.Element => WidgetContainer(Custom(options.bar.customModules.custom4)),
 };
 
 export const Bar = (() => {
