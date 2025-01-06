@@ -30,7 +30,7 @@ function launch(app: AstalApps.Application): void {
         .filter((str) => !str.startsWith('%') && !str.startsWith('@'))
         .join(' ');
 
-    bash(`hyprctl dispatch exec ${exe}`);
+    bash(`hyprctl dispatch exec "${exe}"`);
     app.frequency += 1;
 }
 
